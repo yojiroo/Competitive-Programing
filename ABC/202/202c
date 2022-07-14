@@ -1,0 +1,25 @@
+#0index で解いたけど、1indexの方が良かったかも
+N = int(input())
+A = list(map(int,input().split()))
+B = list(map(int,input().split()))
+C = list(map(int,input().split()))
+
+bc = [0]*(N+1)
+for i in range(N):
+    bc[i] = B[C[i]-1]
+
+a_count = [0]*(N+1)
+for i in range(N):
+    a_count[A[i]] += 1
+
+bc_count = [0]*(N+1)
+
+for i in range(N):
+    bc_count[bc[i]] += 1
+
+ans = 0
+
+for i in range(N+1):
+    ans += a_count[i]*bc_count[i]
+
+print(ans)
