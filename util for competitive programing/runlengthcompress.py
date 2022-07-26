@@ -25,3 +25,7 @@ def runLengthEncodeToString(S: str) -> str:
     for k, v in grouped:
         res += k + str(len(list(v)))
     return res
+
+string = "AAAAAAAAAAAAABBCCCCDD"
+a = runLengthEncode(string)
+print("aa")
